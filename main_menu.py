@@ -1,33 +1,57 @@
 import os
 import tkinter as tk
-from quiz_ui import start_quiz
+
+from question_amount_menu import QuestionCountMenu
+from quiz_ui import start_quiz  # start_quiz(root, filename, limit, show_main_menu)
 
 DATA_FOLDER = "data"
 
+
+def get_quiz_files():
+    """Return all .csv quiz files in the data folder."""
+    files = []
+    for file in os.listdir(DATA_FOLDER):
+        if file.endswith(".csv"):
+            files.append(file)
+    return files
+
+
 def show_main_menu(root):
-    """Display the main menu."""
+    """Display the main menu screen."""
     for widget in root.winfo_children():
         widget.destroy()
 
-    tk.Label(root, text="Quiz Main Menu", font=("Arial", 20), bg="white").pack(pady=20)
+    tk.Label(
+        root,
+        text="Select a Quiz",
+        font=("Arial", 20),
+        bg="white"
+    ).pack(pady=20)
 
-    # List all quiz files in the data folder
-    quiz_files = [f for f in os.listdir(DATA_FOLDER) if f.endswith(".csv")]
+    quiz_files = get_quiz_files()
+
     for file in quiz_files:
+        button_label = file.replace(".csv", "").replace("_", " ").title()
+
         tk.Button(
             root,
-            text=file,
-            command=lambda f=file: start_quiz(root, f, show_main_menu),  # ✅ FIXED
-            font=("Arial", 14),
-            width=25,
-            height=2
+            text=button_label,
+            width=30,
+            height=2,
+            command=lambda f=file: open_question_amount_menu(root, f)
         ).pack(pady=5)
 
-    tk.Button(
-        root,
-        text="Exit",
-        command=root.quit,
-        font=("Arial", 12),
-        width=20,
-        height=1
-    ).pack(pady=10)
+
+def open_question_amount_menu(root, filename):
+    """
+    Open the screen where the user selects how many questions they want.
+    """
+
+    # Create the question amount UI
+    QuestionCountMenu(
+        root=root,
+        data_folder=DATA_FOLDER,
+        filename=filename,
+        start_quiz_callback=start_quiz,           # quiz begins after selecting amount
+        show_main_menu_callback=show_main_menu    # return function
+    )

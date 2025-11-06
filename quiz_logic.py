@@ -2,9 +2,18 @@ import random
 from question_loader import load_questions
 
 class QuizLogic:
-    def __init__(self, csv_file):
+    def __init__(self, csv_file, limit=None):
+        # Load all questions from CSV
         self.all_questions = load_questions(csv_file)
+
+        # Shuffle
         random.shuffle(self.all_questions)
+
+        # Apply limit
+        if limit is not None:
+            self.all_questions = self.all_questions[:limit]
+
+        # Stats
         self.total_questions = len(self.all_questions)
         self.current_index = 0
         self.score = 0
@@ -24,8 +33,10 @@ class QuizLogic:
 
         correct = current["answer"].strip().upper()
         is_correct = (user_choice == correct)
+
         if is_correct:
             self.score += 1
+
         return is_correct, correct
 
     def next_question(self):

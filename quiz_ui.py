@@ -4,18 +4,22 @@ from quiz_logic import QuizLogic
 from score_manager import start_quiz as start_quiz_tracking, end_quiz
 
 DATA_FOLDER = "data"
+
 quiz = None
 current_quiz_file = None
+question_limit_global = None
 
 
-def start_quiz(root, filename, show_main_menu_callback):
+def start_quiz(root, filename, question_limit, show_main_menu_callback):
     """Start the selected quiz."""
-    global quiz, current_quiz_file
+    global quiz, current_quiz_file, question_limit_global
 
+    question_limit_global = question_limit
     current_quiz_file = os.path.join(DATA_FOLDER, filename)
-    quiz = QuizLogic(current_quiz_file)
 
-    # Start tracking score for this quiz
+    quiz = QuizLogic(current_quiz_file, limit=question_limit)
+
+    # Start score tracking
     start_quiz_tracking(filename)
 
     build_ui(root, show_main_menu_callback)
@@ -67,13 +71,13 @@ def build_ui(root, show_main_menu_callback):
 
 
 def load_question(root, show_main_menu_callback):
-    """Load the next question from the quiz."""
     question = quiz.get_current_question()
     if not question:
         show_final_score(root, show_main_menu_callback)
         return
 
     question_label.config(text=question["question"])
+
     for letter in ["A", "B", "C", "D"]:
         text = question[f"choice_{letter.lower()}"]
         buttons[letter].config(text=f"{letter}) {text}", state="normal", bg="white")
@@ -83,16 +87,15 @@ def load_question(root, show_main_menu_callback):
 
 
 def handle_answer(root, letter, show_main_menu_callback):
-    """Handle user clicking an answer button."""
     is_correct, correct_letter = quiz.check_answer(letter)
     correct_choice = quiz.get_current_question()[f"choice_{correct_letter.lower()}"]
 
     if is_correct:
         result_label.config(text="✅ Correct!", fg="green")
     else:
-        result_label.config(text=f"❌ Wrong! Correct answer: {correct_letter}) {correct_choice}", fg="red")
+        result_label.config(text=f"❌ Wrong! Correct answer: {correct_letter}) {correct_choice}",
+                            fg="red")
 
-    # Disable buttons after answering
     for btn in buttons.values():
         btn.config(state="disabled")
 
@@ -100,7 +103,6 @@ def handle_answer(root, letter, show_main_menu_callback):
 
 
 def next_question(root, show_main_menu_callback):
-    """Go to next question or show final score."""
     if quiz.next_question():
         load_question(root, show_main_menu_callback)
     else:
@@ -108,20 +110,26 @@ def next_question(root, show_main_menu_callback):
 
 
 def show_final_score(root, show_main_menu_callback):
-    """Show the final score and save it."""
+    """Show final score and save."""
     for widget in root.winfo_children():
         widget.destroy()
 
     score_text = f"Final Score: {quiz.score}/{quiz.total_questions}"
     tk.Label(root, text=score_text, font=("Arial", 20), bg="white").pack(pady=40)
 
-    # Save score to CSV file
+    # Save score
     end_quiz(os.path.basename(current_quiz_file), quiz.score, quiz.total_questions)
 
+    # Restart button WITH LIMIT INCLUDED
     tk.Button(
         root,
         text="Restart Quiz",
-        command=lambda: start_quiz(root, os.path.basename(current_quiz_file), show_main_menu_callback),
+        command=lambda: start_quiz(
+            root,
+            os.path.basename(current_quiz_file),
+            question_limit_global,
+            show_main_menu_callback,
+        ),
         font=("Arial", 14),
         width=20,
         height=2
