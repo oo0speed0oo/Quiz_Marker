@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="seperated main menu">
-      <change afterPath="$PROJECT_DIR$/data/n5_adjective_past　affirmative_form .csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/n5_adjective_te_form copy.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/question_amount_menu.py" afterDir="false" />
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="add number counter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/n5_adjective_te_form copy.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,13 +84,22 @@
       <option name="project" value="LOCAL" />
       <updated>1762380648536</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add number counter">
+      <option name="closed" value="true" />
+      <created>1762466720069</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762466720069</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="build quiz marker&#10;add loader&#10;add ui&#10;add logic&#10;add score&#10;add save to file" />
     <MESSAGE value="seperated main menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="seperated main menu" />
+    <MESSAGE value="add number counter" />
+    <option name="LAST_COMMIT_MESSAGE" value="add number counter" />
   </component>
 </project>
