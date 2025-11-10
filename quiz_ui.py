@@ -139,7 +139,8 @@ def show_final_score(root, show_main_menu_callback):
     score_text = f"Final Score: {quiz.score}/{quiz.total_questions}"
     tk.Label(root, text=score_text, font=("Arial", 20), bg="white").pack(pady=40)
 
-    end_quiz(os.path.basename(current_quiz_file), quiz.score, quiz.total_questions)
+    #end_quiz(os.path.basename(current_quiz_file), quiz.score, quiz.total_questions)
+    end_quiz(quiz.score, quiz.total_questions)
 
     # Restart with the SAME question limit
     tk.Button(
