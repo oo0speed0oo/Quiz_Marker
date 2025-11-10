@@ -19,7 +19,6 @@ def start_quiz(root, filename, question_limit, show_main_menu_callback):
 
     quiz = QuizLogic(current_quiz_file, limit=question_limit)
 
-    # Start score tracking
     start_quiz_tracking(filename)
 
     build_ui(root, show_main_menu_callback)
@@ -33,9 +32,31 @@ def build_ui(root, show_main_menu_callback):
     for widget in root.winfo_children():
         widget.destroy()
 
-    question_label = tk.Label(root, text="", bg="white", font=("Arial", 16), wraplength=380)
-    question_label.pack(pady=20)
+    # ----- QUESTION + COPY BUTTON -----
+    question_frame = tk.Frame(root, bg="white")
+    question_frame.pack(pady=20)
 
+    question_label = tk.Label(
+        question_frame,
+        text="",
+        bg="white",
+        font=("Arial", 16),
+        wraplength=380,
+        justify="left"
+    )
+    question_label.pack(side="left", padx=5)
+
+    def copy_question():
+        root.clipboard_clear()
+        root.clipboard_append(question_label.cget("text"))
+
+    tk.Button(
+        question_frame,
+        text="Copy",
+        command=copy_question
+    ).pack(side="left", padx=5)
+
+    # ----- ANSWER BUTTONS -----
     buttons = {}
     for letter in ["A", "B", "C", "D"]:
         btn = tk.Button(
@@ -76,8 +97,10 @@ def load_question(root, show_main_menu_callback):
         show_final_score(root, show_main_menu_callback)
         return
 
+    # Update QUESTION label
     question_label.config(text=question["question"])
 
+    # Update answer buttons
     for letter in ["A", "B", "C", "D"]:
         text = question[f"choice_{letter.lower()}"]
         buttons[letter].config(text=f"{letter}) {text}", state="normal", bg="white")
@@ -110,17 +133,15 @@ def next_question(root, show_main_menu_callback):
 
 
 def show_final_score(root, show_main_menu_callback):
-    """Show final score and save."""
     for widget in root.winfo_children():
         widget.destroy()
 
     score_text = f"Final Score: {quiz.score}/{quiz.total_questions}"
     tk.Label(root, text=score_text, font=("Arial", 20), bg="white").pack(pady=40)
 
-    # Save score
     end_quiz(os.path.basename(current_quiz_file), quiz.score, quiz.total_questions)
 
-    # Restart button WITH LIMIT INCLUDED
+    # Restart with the SAME question limit
     tk.Button(
         root,
         text="Restart Quiz",
