@@ -2,13 +2,16 @@ import os
 import tkinter as tk
 from quiz_logic import QuizLogic
 from score_manager import start_quiz as start_quiz_tracking, end_quiz
+from wrong_answer_manager import WrongAnswerManager
+
+
 
 DATA_FOLDER = "data"
 
 quiz = None
 current_quiz_file = None
 question_limit_global = None
-
+wrong_manager = WrongAnswerManager()
 
 def start_quiz(root, filename, question_limit, show_main_menu_callback):
     """Start the selected quiz."""
@@ -111,19 +114,25 @@ def load_question(root, show_main_menu_callback):
 
 def handle_answer(root, letter, show_main_menu_callback):
     is_correct, correct_letter = quiz.check_answer(letter)
-    correct_choice = quiz.get_current_question()[f"choice_{correct_letter.lower()}"]
+    question = quiz.get_current_question()
+    correct_choice = question[f"choice_{correct_letter.lower()}"]
 
     if is_correct:
-        result_label.config(text="✅ Correct!", fg="green")
+        result_label.config(text=f"✅ {correct_choice} is correct!", fg="green")
     else:
-        result_label.config(text=f"❌ Wrong! Correct answer: {correct_letter}) {correct_choice}",
-                            fg="red")
+        result_label.config(
+            text=f"❌ {letter} Wrong! Correct: {correct_letter}) {correct_choice}",
+            fg="red"
+        )
 
+        # ✅ SAVE WRONG ANSWER
+        wrong_manager.add_wrong_answer(question)
+
+    # disable buttons
     for btn in buttons.values():
         btn.config(state="disabled")
 
     next_button.config(state="normal")
-
 
 def next_question(root, show_main_menu_callback):
     if quiz.next_question():
