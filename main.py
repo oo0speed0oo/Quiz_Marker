@@ -2,15 +2,15 @@ import tkinter as tk
 from main_menu import show_main_menu
 
 def main():
-    root = tk.Tk()
-    root.title("Quiz Marker")
-    root.geometry("400x500")
-    root.configure(bg="white")
+    main_window = tk.Tk()
+    main_window.title("Quiz Marker")
+    main_window.geometry("400x500")
+    main_window.configure(bg="white")
 
     # Show the main menu first
-    show_main_menu(root)
+    show_main_menu(main_window)
 
-    root.mainloop()
+    main_window.mainloop()
 
 if __name__ == "__main__":
     main()
