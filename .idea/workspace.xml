@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="change variable names">
-      <change afterPath="$PROJECT_DIR$/data/wrong_answers.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wrong_answer_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wrong_answers.csv" afterDir="false" />
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="add wrong answer manager">
+      <change afterPath="$PROJECT_DIR$/data/old/n5_adjective_past_negative_form.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/old/n5_adjective_past　affirmative_form .csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/old/n5_verb_te_form.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Verbs_n5_ます.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/Verbs_n5_ます.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/n5_adjective_past_negative_form.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/n5_adjective_past　affirmative_form .csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/n5_verb_te_form.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/wrong_answers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/wrong_answers.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz_scores.csv" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_scores.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,19 +35,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.main.executor": "Run",
-    "Python.main_menu.executor": "Run",
-    "Python.quiz_ui.executor": "Run",
-    "Python.score_manager.executor": "Run",
-    "Python.wrong_answer_manger.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main_menu.executor&quot;: &quot;Run&quot;,
+    &quot;Python.quiz_ui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.score_manager.executor&quot;: &quot;Run&quot;,
+    &quot;Python.wrong_answer_manger.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -140,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762869695848</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add wrong answer manager">
+      <option name="closed" value="true" />
+      <created>1762897814152</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1762897814152</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -152,6 +164,7 @@
     <MESSAGE value="add copy button" />
     <MESSAGE value="fix score" />
     <MESSAGE value="change variable names" />
-    <option name="LAST_COMMIT_MESSAGE" value="change variable names" />
+    <MESSAGE value="add wrong answer manager" />
+    <option name="LAST_COMMIT_MESSAGE" value="add wrong answer manager" />
   </component>
 </project>
