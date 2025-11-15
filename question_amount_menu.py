@@ -52,6 +52,8 @@ class QuestionCountMenu:
         ).pack(pady=10)
 
         # Spinbox from 1 to total questions
+        self.spinbox_value = tk.IntVar(value=1)
+
         self.spinbox = tk.Spinbox(
             self.root,
             from_=1,
@@ -60,6 +62,8 @@ class QuestionCountMenu:
             font=("Arial", 14)
         )
         self.spinbox.pack(pady=10)
+        self.root.update()  # forces redraw
+
 
         tk.Button(
             self.root,

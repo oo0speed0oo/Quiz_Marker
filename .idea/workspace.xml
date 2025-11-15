@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="add wrong answer manager">
-      <change afterPath="$PROJECT_DIR$/data/old/n5_adjective_past_negative_form.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/old/n5_adjective_past　affirmative_form .csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/old/n5_verb_te_form.csv" afterDir="false" />
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update data&#10;add folder&#10;move data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Verbs_n5_ます.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/Verbs_n5_ます.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/n5_adjective_past_negative_form.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/n5_adjective_past　affirmative_form .csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/n5_verb_te_form.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/wrong_answers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/wrong_answers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_amount_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_amount_menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz_scores.csv" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_scores.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762897814152</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update data&#10;add folder&#10;move data">
+      <option name="closed" value="true" />
+      <created>1762983357869</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1762983357869</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -165,6 +168,7 @@
     <MESSAGE value="fix score" />
     <MESSAGE value="change variable names" />
     <MESSAGE value="add wrong answer manager" />
-    <option name="LAST_COMMIT_MESSAGE" value="add wrong answer manager" />
+    <MESSAGE value="update data&#10;add folder&#10;move data" />
+    <option name="LAST_COMMIT_MESSAGE" value="update data&#10;add folder&#10;move data" />
   </component>
 </project>

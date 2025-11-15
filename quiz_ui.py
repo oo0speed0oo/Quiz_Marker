@@ -30,7 +30,7 @@ def start_quiz(root, filename, question_limit, show_main_menu_callback):
 
 def build_ui(root, show_main_menu_callback):
     """Build the quiz interface."""
-    global question_label, result_label, next_button, buttons
+    global question_label, result_label, question_number_label, chapter_number_label, next_button, buttons
 
     for widget in root.winfo_children():
         widget.destroy()
@@ -47,7 +47,7 @@ def build_ui(root, show_main_menu_callback):
         wraplength=380,
         justify="left"
     )
-    question_label.pack(side="left", padx=5)
+    question_label.pack(padx=5)
 
     def copy_question():
         root.clipboard_clear()
@@ -55,9 +55,31 @@ def build_ui(root, show_main_menu_callback):
 
     tk.Button(
         question_frame,
-        text="Copy",
+        text="Copy Question",
         command=copy_question
-    ).pack(side="left", padx=5)
+    ).pack(padx=5)
+
+    # ----- QUESTION NUMBER LABEL -----
+    question_number_label = tk.Label(
+        question_frame,
+        text="Q #: ",  # prefix text
+        bg="white",
+        font=("Arial", 16),
+        wraplength=380,
+        justify="center"
+    )
+    question_number_label.pack(padx=5)
+
+    # ----- CHAPTER NUMBER LABEL -----
+    chapter_number_label = tk.Label(
+        question_frame,
+        text="Ch #: ",  # prefix text
+        bg="white",
+        font=("Arial", 16),
+        wraplength=380,
+        justify="center"
+    )
+    chapter_number_label.pack(padx=5)
 
     # ----- ANSWER BUTTONS -----
     buttons = {}
@@ -102,6 +124,14 @@ def load_question(root, show_main_menu_callback):
 
     # Update QUESTION label
     question_label.config(text=question["question"])
+
+    # Update QUESTION NUMBER label
+    question_number_label.config(text=f"Q #: {question['question_number']}")
+
+    # Update QUESTION CHAPTER label
+    chapter_number_label.config(text=f"Ch #: {question['chapter_number']}")
+
+
 
     # Update answer buttons
     for letter in ["A", "B", "C", "D"]:
