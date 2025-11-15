@@ -125,11 +125,19 @@ def load_question(root, show_main_menu_callback):
     # Update QUESTION label
     question_label.config(text=question["question"])
 
-    # Update QUESTION NUMBER label
-    question_number_label.config(text=f"Q #: {question['question_number']}")
+    # Update QUESTION NUMBER label only if it exists
+    if "question_number" in question and question["question_number"]:
+        question_number_label.config(text=f"Q #: {question['question_number']}")
+        question_number_label.pack()  # ensure it is visible
+    else:
+        question_number_label.pack_forget()  # hide if missing
 
-    # Update QUESTION CHAPTER label
-    chapter_number_label.config(text=f"Ch #: {question['chapter_number']}")
+    # Update QUESTION CHAPTER label only if it exists
+    if "chapter_number" in question and question["chapter_number"]:
+        chapter_number_label.config(text=f"Ch #: {question['chapter_number']}")
+        chapter_number_label.pack()  # ensure it is visible
+    else:
+        chapter_number_label.pack_forget()  # hide if missing
 
 
 

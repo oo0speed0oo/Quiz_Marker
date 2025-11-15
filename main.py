@@ -4,7 +4,7 @@ from main_menu import show_main_menu
 def main():
     main_window = tk.Tk()
     main_window.title("Quiz Marker")
-    main_window.geometry("400x500")
+    main_window.geometry("400x600")
     main_window.configure(bg="white")
 
     # Show the main menu first

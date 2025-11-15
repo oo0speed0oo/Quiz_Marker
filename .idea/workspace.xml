@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update data&#10;add folder&#10;move data">
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update quiz menu&#10;update questions csv&#10;update scroll wheel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/wrong_answers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/wrong_answers.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_amount_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_amount_menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz_scores.csv" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_scores.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_ui.py" afterDir="false" />
     </list>
@@ -155,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762983357869</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update quiz menu&#10;update questions csv&#10;update scroll wheel">
+      <option name="closed" value="true" />
+      <created>1763202030298</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1763202030298</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -169,6 +176,7 @@
     <MESSAGE value="change variable names" />
     <MESSAGE value="add wrong answer manager" />
     <MESSAGE value="update data&#10;add folder&#10;move data" />
-    <option name="LAST_COMMIT_MESSAGE" value="update data&#10;add folder&#10;move data" />
+    <MESSAGE value="update quiz menu&#10;update questions csv&#10;update scroll wheel" />
+    <option name="LAST_COMMIT_MESSAGE" value="update quiz menu&#10;update questions csv&#10;update scroll wheel" />
   </component>
 </project>
