@@ -15,7 +15,9 @@ wrong_manager = WrongAnswerManager()
 
 def start_quiz(root, filename, question_limit, show_main_menu_callback):
     """Start the selected quiz."""
-    global quiz, current_quiz_file, question_limit_global
+    global quiz, current_quiz_file, question_limit_global, current_question_number
+
+    current_question_number = 0
 
     question_limit_global = question_limit
     current_quiz_file = os.path.join(DATA_FOLDER, filename)
@@ -30,7 +32,8 @@ def start_quiz(root, filename, question_limit, show_main_menu_callback):
 
 def build_ui(root, show_main_menu_callback):
     """Build the quiz interface."""
-    global question_label, result_label, question_number_label, chapter_number_label, next_button, buttons
+    global question_label, result_label, question_number_label, current_question_label, \
+        chapter_number_label, next_button, buttons
 
     for widget in root.winfo_children():
         widget.destroy()
@@ -81,6 +84,17 @@ def build_ui(root, show_main_menu_callback):
     )
     chapter_number_label.pack(padx=5)
 
+    # ----- CURRENT QUESTION NUMBER LABEL -----
+    current_question_label = tk.Label(
+        question_frame,
+        text=" ",  # prefix text
+        bg="white",
+        font=("Arial", 16),
+        wraplength=380,
+        justify="center"
+    )
+    current_question_label.pack(padx=5)
+
     # ----- ANSWER BUTTONS -----
     buttons = {}
     for letter in ["A", "B", "C", "D"]:
@@ -117,10 +131,14 @@ def build_ui(root, show_main_menu_callback):
 
 
 def load_question(root, show_main_menu_callback):
+    global current_question_number
     question = quiz.get_current_question()
     if not question:
         show_final_score(root, show_main_menu_callback)
         return
+
+    # Increment question counter
+    current_question_number += 1
 
     # Update QUESTION label
     question_label.config(text=question["question"])
@@ -139,6 +157,11 @@ def load_question(root, show_main_menu_callback):
     else:
         chapter_number_label.pack_forget()  # hide if missing
 
+    # ----- CURRENT PROGRESS (e.g., 2 / 40) -----
+    current_question_label.config(
+        text=f"Progress: {current_question_number} / {quiz.total_questions}"
+    )
+    current_question_label.pack()
 
 
     # Update answer buttons
