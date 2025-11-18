@@ -4,28 +4,39 @@ from quiz_logic import QuizLogic
 from score_manager import start_quiz as start_quiz_tracking, end_quiz
 from wrong_answer_manager import WrongAnswerManager
 
-
-
 DATA_FOLDER = "data"
 
 quiz = None
 current_quiz_file = None
 question_limit_global = None
 wrong_manager = WrongAnswerManager()
+# Variable for the chapter filter, needed for restart
+selected_chapters_global = None
 
-def start_quiz(root, filename, question_limit, show_main_menu_callback):
+
+def start_quiz(root, filename, limit, show_main_menu_callback, selected_chapters):
     """Start the selected quiz."""
-    global quiz, current_quiz_file, question_limit_global, current_question_number
+    global quiz, current_quiz_file, question_limit_global, selected_chapters_global, current_question_number
 
     current_question_number = 0
 
-    question_limit_global = question_limit
+    # FIX 1: The parameter is named 'limit', not 'question_limit'
+    question_limit_global = limit
+    # NEW: Store the chapters for restart
+    selected_chapters_global = selected_chapters
+
     current_quiz_file = os.path.join(DATA_FOLDER, filename)
 
-    quiz = QuizLogic(current_quiz_file, limit=question_limit)
+    # FIX 2: Pass selected_chapters and use 'limit' as the argument name
+    quiz = QuizLogic(
+        current_quiz_file,
+        selected_chapters=selected_chapters,  # Pass the chapter filter
+        limit=limit  # Use the 'limit' parameter
+    )
 
     start_quiz_tracking(filename)
 
+    # FIX 3: Pass the callback correctly to build_ui and load_question
     build_ui(root, show_main_menu_callback)
     load_question(root, show_main_menu_callback)
 
@@ -163,7 +174,6 @@ def load_question(root, show_main_menu_callback):
     )
     current_question_label.pack()
 
-
     # Update answer buttons
     for letter in ["A", "B", "C", "D"]:
         text = question[f"choice_{letter.lower()}"]
@@ -186,7 +196,7 @@ def handle_answer(root, letter, show_main_menu_callback):
             fg="red"
         )
 
-        # ✅ SAVE WRONG ANSWER
+        # SAVE WRONG ANSWER
         wrong_manager.add_wrong_answer(question)
 
     # disable buttons
@@ -194,6 +204,7 @@ def handle_answer(root, letter, show_main_menu_callback):
         btn.config(state="disabled")
 
     next_button.config(state="normal")
+
 
 def next_question(root, show_main_menu_callback):
     if quiz.next_question():
@@ -203,16 +214,18 @@ def next_question(root, show_main_menu_callback):
 
 
 def show_final_score(root, show_main_menu_callback):
+    global current_quiz_file, question_limit_global, selected_chapters_global
+
     for widget in root.winfo_children():
         widget.destroy()
 
     score_text = f"Final Score: {quiz.score}/{quiz.total_questions}"
     tk.Label(root, text=score_text, font=("Arial", 20), bg="white").pack(pady=40)
 
-    #end_quiz(os.path.basename(current_quiz_file), quiz.score, quiz.total_questions)
+    # end_quiz(os.path.basename(current_quiz_file), quiz.score, quiz.total_questions)
     end_quiz(quiz.score, quiz.total_questions)
 
-    # Restart with the SAME question limit
+    # Restart with the SAME question limit AND chapter filter
     tk.Button(
         root,
         text="Restart Quiz",
@@ -221,6 +234,7 @@ def show_final_score(root, show_main_menu_callback):
             os.path.basename(current_quiz_file),
             question_limit_global,
             show_main_menu_callback,
+            selected_chapters_global  # NEW: Pass the stored chapter list
         ),
         font=("Arial", 14),
         width=20,

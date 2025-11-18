@@ -1,6 +1,6 @@
 import os
 import tkinter as tk
-
+from chapter_selection_menu import ChapterSelectionMenu
 from question_amount_menu import QuestionCountMenu
 from quiz_ui import start_quiz  # start_quiz(root, filename, limit, show_main_menu)
 
@@ -38,11 +38,23 @@ def show_main_menu(root):
             text=button_label,
             width=30,
             height=2,
-            command=lambda f=file: open_question_amount_menu(root, f)
+            command=lambda f=file: open_chapter_selection_menu(root, f)
         ).pack(pady=5)
 
+def open_chapter_selection_menu(root, filename):
+    """
+    Open the screen where the user selects which chapters they want.
+    """
+    ChapterSelectionMenu(
+        root=root,
+        data_folder=DATA_FOLDER,
+        filename=filename,
+        # The function to call AFTER selecting chapters
+        open_next_menu_callback=open_question_amount_menu,
+        show_main_menu_callback=show_main_menu
+    )
 
-def open_question_amount_menu(root, filename):
+def open_question_amount_menu(root, filename, selected_chapters):
     """
     Open the screen where the user selects how many questions they want.
     """
@@ -52,6 +64,7 @@ def open_question_amount_menu(root, filename):
         root=root,
         data_folder=DATA_FOLDER,
         filename=filename,
-        start_quiz_callback=start_quiz,           # quiz begins after selecting amount
-        show_main_menu_callback=show_main_menu    # return function
+        selected_chapters=selected_chapters,  # NEW: Pass selected chapters
+        start_quiz_callback=start_quiz,
+        show_main_menu_callback=show_main_menu
     )
