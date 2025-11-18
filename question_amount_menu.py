@@ -8,7 +8,8 @@ class QuestionCountMenu:
         self.root = root
         self.filename = filename
         self.data_folder = data_folder
-        self.selected_chapters = selected_chapters  # NEW
+        # selected_chapters will be an empty list [] if chapter selection was skipped
+        self.selected_chapters = selected_chapters
         self.start_quiz = start_quiz_callback
         self.show_main_menu = show_main_menu_callback
 
@@ -19,14 +20,39 @@ class QuestionCountMenu:
         self.build_ui()
 
     def count_questions(self):
-        """Count how many questions exist in the CSV file for the selected chapters."""
+        """
+        Count how many questions exist in the CSV file.
+        If self.selected_chapters is empty, count all rows (no chapter filtering).
+        If self.selected_chapters is not empty, filter by chapter number.
+        """
         count = 0
-        with open(self.full_path, newline="", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                # Filter questions based on the selected chapters
-                if "chapter_number" in row and row["chapter_number"].strip() in self.selected_chapters:
-                    count += 1
+
+        # Determine if chapter filtering should be applied
+        filter_by_chapter = bool(self.selected_chapters)
+
+        try:
+            with open(self.full_path, newline="", encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+
+                    if not filter_by_chapter:
+                        # Case 1: No chapters were selected/found (empty list was passed). Count all rows.
+                        count += 1
+                        continue  # Move to the next row
+
+                    # Case 2: Chapters were selected. Filter based on chapter_number column.
+                    if "chapter_number" in row:
+                        chapter = row["chapter_number"].strip()
+                        if chapter in self.selected_chapters:
+                            count += 1
+
+        except FileNotFoundError:
+            print(f"Error: File not found at {self.full_path}")
+            return 0
+        except Exception as e:
+            print(f"An error occurred while reading the file: {e}")
+            return 0
+
         return count
 
     def build_ui(self):
@@ -41,10 +67,15 @@ class QuestionCountMenu:
             bg="white"
         ).pack(pady=10)
 
-        chapters_str = ", ".join(self.selected_chapters)
+        if self.selected_chapters:
+            chapters_str = ", ".join(self.selected_chapters)
+            display_text = f"Selected Chapters: {chapters_str}"
+        else:
+            display_text = "Selected Chapters: All (Chapter filtering skipped)"
+
         tk.Label(
             self.root,
-            text=f"Selected Chapters: {chapters_str}",
+            text=display_text,
             font=("Arial", 12),
             bg="white"
         ).pack(pady=5)
@@ -75,7 +106,6 @@ class QuestionCountMenu:
         self.spinbox.pack(pady=10)
         self.root.update()
 
-
         tk.Button(
             self.root,
             text="Start Quiz",
@@ -95,4 +125,10 @@ class QuestionCountMenu:
     def start_selected_amount(self):
         """User picks how many questions to answer."""
         amount = int(self.spinbox.get())
+
+        # Check if the total available questions is 0 before starting the quiz
+        if self.total_questions == 0:
+            tk.messagebox.showerror("Error", "No questions available in the selected data.")
+            return
+
         self.start_quiz(self.root, self.filename, amount, self.show_main_menu, self.selected_chapters)

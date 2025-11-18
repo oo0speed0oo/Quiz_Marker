@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update progress bar" />
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="add chapter selector">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter_selection_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_selection_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_amount_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_amount_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_scores.csv" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_scores.csv" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,10 +32,14 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.chapter_selection_menu.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.main_menu.executor&quot;: &quot;Run&quot;,
+    &quot;Python.question_amount_menu.executor&quot;: &quot;Run&quot;,
+    &quot;Python.quiz_logic.executor&quot;: &quot;Run&quot;,
     &quot;Python.quiz_ui.executor&quot;: &quot;Run&quot;,
     &quot;Python.score_manager.executor&quot;: &quot;Run&quot;,
+    &quot;Python.wrong_answer_manager.executor&quot;: &quot;Run&quot;,
     &quot;Python.wrong_answer_manger.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -173,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763214033805</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add chapter selector">
+      <option name="closed" value="true" />
+      <created>1763472795263</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1763472795263</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -190,6 +207,7 @@
     <MESSAGE value="update quiz menu&#10;update questions csv&#10;update scroll wheel" />
     <MESSAGE value="update labels if not there&#10;update size of main window" />
     <MESSAGE value="update progress bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="update progress bar" />
+    <MESSAGE value="add chapter selector" />
+    <option name="LAST_COMMIT_MESSAGE" value="add chapter selector" />
   </component>
 </project>

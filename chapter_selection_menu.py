@@ -19,6 +19,13 @@ class ChapterSelectionMenu:
 
         self.unique_chapters = self.get_unique_chapters()
 
+        if not self.unique_chapters:
+            print(f"No chapters found in {self.filename}. Skipping chapter selection menu.")
+            for widget in self.root.winfo_children():
+                widget.destroy()
+            self.open_next_menu(self.root, self.filename, [])
+            return
+
         self.build_ui()
 
     def get_unique_chapters(self):
