@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="add chapter selector">
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update csv files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_selection_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_selection_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_amount_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_amount_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/N4_Grammar_Questions.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/N4_Grammar_Questions.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/wrong_answers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/wrong_answers.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz_scores.csv" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_scores.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +190,31 @@
       <option name="project" value="LOCAL" />
       <updated>1763472795263</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update chapter selection menu to skip if no chapters were found.">
+      <option name="closed" value="true" />
+      <created>1763503193877</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1763503193877</updated>
+    </task>
+    <task id="LOCAL-00018" summary="update csv files">
+      <option name="closed" value="true" />
+      <created>1763503344354</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1763503344354</updated>
+    </task>
+    <task id="LOCAL-00019" summary="update csv files">
+      <option name="closed" value="true" />
+      <created>1763503364777</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1763503364777</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -208,6 +232,8 @@
     <MESSAGE value="update labels if not there&#10;update size of main window" />
     <MESSAGE value="update progress bar" />
     <MESSAGE value="add chapter selector" />
-    <option name="LAST_COMMIT_MESSAGE" value="add chapter selector" />
+    <MESSAGE value="update chapter selection menu to skip if no chapters were found." />
+    <MESSAGE value="update csv files" />
+    <option name="LAST_COMMIT_MESSAGE" value="update csv files" />
   </component>
 </project>
