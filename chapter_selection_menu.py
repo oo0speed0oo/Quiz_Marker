@@ -71,18 +71,29 @@ class ChapterSelectionMenu:
             bg="white"
         ).pack(pady=10)
 
-        # Create a frame to hold the checkboxes (better organization)
+        # Create a frame to hold the checkboxes
         checkbox_frame = tk.Frame(self.root, bg="white")
-        checkbox_frame.pack(pady=10)
+        checkbox_frame.pack(pady=10, padx=20)  # Add some padding to the frame
+
+        # --- Change starts here: Use .grid() for two columns ---
+
+        # Calculate the number of items per column
+        num_chapters = len(self.unique_chapters)
+        # Determine the number of rows needed
+        rows_per_column = (num_chapters + 1) // 2
+
+        # Keep track of the current row and column
+        row_counter = 0
+        col_counter = 0
 
         # Create a checkbox for each unique chapter
-        for chapter in self.unique_chapters:
+        for i, chapter in enumerate(self.unique_chapters):
             # Create a variable to track the state of the checkbox (1=checked, 0=unchecked)
             var = tk.IntVar(value=1)  # Default to all selected
             self.chapter_vars[chapter] = var
 
             # Create the Checkbutton
-            tk.Checkbutton(
+            chk = tk.Checkbutton(
                 checkbox_frame,
                 text=f"Chapter {chapter}",
                 variable=var,
@@ -90,7 +101,20 @@ class ChapterSelectionMenu:
                 offvalue=0,
                 bg="white",
                 anchor="w",  # Align text to the left
-            ).pack(fill="x", padx=10, pady=2)  # Fill horizontally within the frame
+            )
+
+            # Place the Checkbutton in the grid
+            # i // rows_per_column determines the column (0 for first half, 1 for second half)
+            # i % rows_per_column determines the row within that column
+            chk.grid(
+                row=i % rows_per_column,
+                column=i // rows_per_column,
+                sticky="w",  # Stick to the west (left) side of the cell
+                padx=10,
+                pady=2
+            )
+
+        # --- Change ends here ---
 
         tk.Button(
             self.root,
