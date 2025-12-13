@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update csv file">
-      <change beforePath="$PROJECT_DIR$/chapter_selection_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_selection_menu.py" afterDir="false" />
-    </list>
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="add columns to save vertical space" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -299,7 +297,23 @@
       <option name="project" value="LOCAL" />
       <updated>1765576136347</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="add columns to save vertical space">
+      <option name="closed" value="true" />
+      <created>1765576465695</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1765576465695</updated>
+    </task>
+    <task id="LOCAL-00032" summary="add columns to save vertical space">
+      <option name="closed" value="true" />
+      <created>1765576475599</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1765576475599</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -320,6 +334,7 @@
     <MESSAGE value="update chapter selection menu to skip if no chapters were found." />
     <MESSAGE value="update csv files" />
     <MESSAGE value="update csv file" />
-    <option name="LAST_COMMIT_MESSAGE" value="update csv file" />
+    <MESSAGE value="add columns to save vertical space" />
+    <option name="LAST_COMMIT_MESSAGE" value="add columns to save vertical space" />
   </component>
 </project>
