@@ -63,7 +63,7 @@ class QuestionCountMenu:
         tk.Label(
             self.root,
             text=f"Quiz: {self.filename}",
-            font=("Arial", 16),
+            font=("Arial", 20),
             bg="white"
         ).pack(pady=10)
 
@@ -76,21 +76,21 @@ class QuestionCountMenu:
         tk.Label(
             self.root,
             text=display_text,
-            font=("Arial", 12),
+            font=("Arial", 16),
             bg="white"
         ).pack(pady=5)
 
         tk.Label(
             self.root,
             text=f"Total Questions Available: {self.total_questions}",
-            font=("Arial", 14),
+            font=("Arial", 16),
             bg="white"
         ).pack(pady=10)
 
         tk.Label(
             self.root,
             text="How many questions do you want?",
-            font=("Arial", 14),
+            font=("Arial", 16),
             bg="white"
         ).pack(pady=10)
 

@@ -220,7 +220,7 @@ def show_final_score(root, show_main_menu_callback):
         widget.destroy()
 
     score_text = f"Final Score: {quiz.score}/{quiz.total_questions}"
-    tk.Label(root, text=score_text, font=("Arial", 20), bg="white").pack(pady=40)
+    tk.Label(root, text=score_text, font=("Arial", 25), bg="white").pack(pady=40)
 
     # end_quiz(os.path.basename(current_quiz_file), quiz.score, quiz.total_questions)
     end_quiz(quiz.score, quiz.total_questions)
@@ -236,7 +236,7 @@ def show_final_score(root, show_main_menu_callback):
             show_main_menu_callback,
             selected_chapters_global  # NEW: Pass the stored chapter list
         ),
-        font=("Arial", 14),
+        font=("Arial", 20),
         width=20,
         height=2
     ).pack(pady=10)
@@ -245,7 +245,7 @@ def show_final_score(root, show_main_menu_callback):
         root,
         text="Back to Main Menu",
         command=lambda: show_main_menu_callback(root),
-        font=("Arial", 14),
+        font=("Arial", 20),
         width=20,
         height=2
     ).pack(pady=10)
