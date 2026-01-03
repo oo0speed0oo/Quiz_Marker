@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update data">
-      <change afterPath="$PROJECT_DIR$/data/quiz_scores.csv" afterDir="false" />
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update score manager">
+      <change afterPath="$PROJECT_DIR$/data/Verbs_n4_ば.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/Verbs_n4_ばない.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/N4_Grammar_Questions.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/N4_Grammar_Questions.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/quiz_scores.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz_scores.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/wrong_answers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/wrong_answers.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz_scores.csv" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_scores.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/score_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -392,7 +391,23 @@
       <option name="project" value="LOCAL" />
       <updated>1767138566590</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="update score manager">
+      <option name="closed" value="true" />
+      <created>1767221076769</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1767221076769</updated>
+    </task>
+    <task id="LOCAL-00043" summary="update score manager">
+      <option name="closed" value="true" />
+      <created>1767221095965</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1767221095965</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -417,6 +432,8 @@
     <MESSAGE value="update questions" />
     <MESSAGE value="Update font" />
     <MESSAGE value="update data" />
-    <option name="LAST_COMMIT_MESSAGE" value="update data" />
+    <MESSAGE value="update score manager&#10;update data" />
+    <MESSAGE value="update score manager" />
+    <option name="LAST_COMMIT_MESSAGE" value="update score manager" />
   </component>
 </project>
