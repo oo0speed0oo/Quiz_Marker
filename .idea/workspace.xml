@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update score manager">
-      <change afterPath="$PROJECT_DIR$/data/Verbs_n4_ば.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/Verbs_n4_ばない.csv" afterDir="false" />
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/N4_Grammar_Questions.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/N4_Grammar_Questions.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/quiz_scores.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/quiz_scores.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/wrong_answers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/wrong_answers.csv" afterDir="false" />
     </list>
@@ -407,7 +406,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767221095965</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="update data">
+      <option name="closed" value="true" />
+      <created>1767474640346</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1767474640346</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -431,9 +438,9 @@
     <MESSAGE value="add columns to save vertical space" />
     <MESSAGE value="update questions" />
     <MESSAGE value="Update font" />
-    <MESSAGE value="update data" />
     <MESSAGE value="update score manager&#10;update data" />
     <MESSAGE value="update score manager" />
-    <option name="LAST_COMMIT_MESSAGE" value="update score manager" />
+    <MESSAGE value="update data" />
+    <option name="LAST_COMMIT_MESSAGE" value="update data" />
   </component>
 </project>
