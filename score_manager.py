@@ -4,7 +4,7 @@ import os
 
 # Global variable for current quiz file
 current_quiz_file = None
-DATA_FOLDER = "data"
+DATA_FOLDER = "data/test_scores"
 SCORE_FILENAME = os.path.join(DATA_FOLDER, "quiz_scores.csv")
 
 def start_quiz(file):
