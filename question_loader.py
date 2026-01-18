@@ -1,21 +1,27 @@
 import csv
 
+
 def load_questions(filename):
     questions = []
 
-    with open(filename, newline="", encoding="utf-8") as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            questions.append({
-                "question_number": row["question_number"].strip(),
-                "unit_number": row["unit_number"].strip(),
-                "chapter_number": row["chapter_number"].strip(),
-                "question": row["question"].strip(),
-                "choice_a": row["choice_a"].strip(),
-                "choice_b": row["choice_b"].strip(),
-                "choice_c": row["choice_c"].strip(),
-                "choice_d": row["choice_d"].strip(),
-                "answer": row["answer"].strip().upper()
-            })
+    try:
+        with open(filename, newline="", encoding="utf-8") as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                # Using .get(key, "") ensures that if a column is missing,
+                # the program doesn't crash with a KeyError.
+                questions.append({
+                    "question_number": row.get("question_number", "").strip(),
+                    "unit_number": row.get("unit_number", "").strip(),
+                    "chapter_number": row.get("chapter_number", "").strip(),
+                    "question": row.get("question", "").strip(),
+                    "choice_a": row.get("choice_a", "").strip(),
+                    "choice_b": row.get("choice_b", "").strip(),
+                    "choice_c": row.get("choice_c", "").strip(),
+                    "choice_d": row.get("choice_d", "").strip(),
+                    "answer": row.get("answer", "").strip().upper()
+                })
+    except Exception as e:
+        print(f"Error loading questions from {filename}: {e}")
 
     return questions

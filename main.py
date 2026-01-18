@@ -1,5 +1,5 @@
 import tkinter as tk
-from main_menu import show_main_menu
+from main_menu import MainMenu  # Updated import
 
 def main():
     main_window = tk.Tk()
@@ -7,8 +7,9 @@ def main():
     main_window.geometry("800x800")
     main_window.configure(bg="white")
 
-    # Show the main menu first
-    show_main_menu(main_window)
+    # Initialize the Main Menu class.
+    # This now handles the logic of whether to skip the unit selector or not.
+    MainMenu(main_window)
 
     main_window.mainloop()
 

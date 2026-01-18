@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update data">
-      <change afterPath="$PROJECT_DIR$/unit_selection_menu.py" afterDir="false" />
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update data&#10;update unit selector">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter_selection_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_selection_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/N4_Grammar_Questions.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/N4_Grammar_Questions.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test_scores/quiz_scores.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/test_scores/quiz_scores.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/wrong_answers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/wrong_answers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/question_amount_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_amount_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/question_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_loader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_logic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quiz_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_ui.py" afterDir="false" />
     </list>
@@ -65,14 +66,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762375150041</updated>
-    </task>
-    <task id="LOCAL-00001" summary="build quiz marker&#10;add loader&#10;add ui&#10;add logic&#10;add score&#10;add save to file">
-      <option name="closed" value="true" />
-      <created>1762378586426</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1762378586426</updated>
     </task>
     <task id="LOCAL-00002" summary="build quiz marker&#10;add loader&#10;add ui&#10;add logic&#10;add score&#10;add save to file">
       <option name="closed" value="true" />
@@ -458,7 +451,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768426735240</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="update data&#10;update unit selector">
+      <option name="closed" value="true" />
+      <created>1768715097318</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1768715097318</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -487,6 +488,7 @@
     <MESSAGE value="update data&#10;change test score folder location&#10;delete old files" />
     <MESSAGE value="update data&#10;change test score folder location" />
     <MESSAGE value="update data" />
-    <option name="LAST_COMMIT_MESSAGE" value="update data" />
+    <MESSAGE value="update data&#10;update unit selector" />
+    <option name="LAST_COMMIT_MESSAGE" value="update data&#10;update unit selector" />
   </component>
 </project>
