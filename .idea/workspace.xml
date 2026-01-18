@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update data" />
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update data">
+      <change afterPath="$PROJECT_DIR$/unit_selection_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter_selection_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_selection_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/N4_Grammar_Questions.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/N4_Grammar_Questions.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_amount_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_amount_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/question_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/question_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/quiz_ui.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -441,7 +450,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768339842332</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="update data">
+      <option name="closed" value="true" />
+      <created>1768426735240</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1768426735240</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

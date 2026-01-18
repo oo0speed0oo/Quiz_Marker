@@ -9,59 +9,71 @@ DATA_FOLDER = "data"
 quiz = None
 current_quiz_file = None
 question_limit_global = None
-wrong_manager = WrongAnswerManager()
-# Variable for the chapter filter, needed for restart
 selected_chapters_global = None
+current_question_number = 0
+
+wrong_manager = WrongAnswerManager()
 
 
-def start_quiz(root, filename, limit, show_main_menu_callback, selected_chapters):
-    """Start the selected quiz."""
-    global quiz, current_quiz_file, question_limit_global, selected_chapters_global, current_question_number
+def start_quiz(
+    root,
+    filename,
+    question_limit,
+    show_main_menu_callback,
+    selected_chapters
+):
+    """Start the quiz with chapter filtering and question limit."""
+    global quiz
+    global current_quiz_file
+    global question_limit_global
+    global selected_chapters_global
+    global current_question_number
 
     current_question_number = 0
-
-    # FIX 1: The parameter is named 'limit', not 'question_limit'
-    question_limit_global = limit
-    # NEW: Store the chapters for restart
+    question_limit_global = question_limit
     selected_chapters_global = selected_chapters
-
     current_quiz_file = os.path.join(DATA_FOLDER, filename)
 
-    # FIX 2: Pass selected_chapters and use 'limit' as the argument name
     quiz = QuizLogic(
         current_quiz_file,
-        selected_chapters=selected_chapters,  # Pass the chapter filter
-        limit=limit  # Use the 'limit' parameter
+        selected_chapters=selected_chapters,
+        limit=question_limit
     )
 
     start_quiz_tracking(filename)
 
-    # FIX 3: Pass the callback correctly to build_ui and load_question
     build_ui(root, show_main_menu_callback)
     load_question(root, show_main_menu_callback)
 
 
 def build_ui(root, show_main_menu_callback):
     """Build the quiz interface."""
-    global question_label, result_label, question_number_label, current_question_label, \
-        chapter_number_label, next_button, buttons
+    global question_label
+    global result_label
+    global question_number_label
+    global chapter_number_label
+    global progress_label
+    global next_button
+    global buttons
 
     for widget in root.winfo_children():
         widget.destroy()
 
-    # ----- QUESTION + COPY BUTTON -----
+    root.configure(bg="white")
+
+    # ---------- QUESTION ----------
     question_frame = tk.Frame(root, bg="white")
     question_frame.pack(pady=20)
 
     question_label = tk.Label(
         question_frame,
         text="",
-        bg="white",
         font=("Arial", 16),
-        wraplength=380,
-        justify="left"
+        wraplength=600,
+        justify="left",
+        bg="white"
     )
-    question_label.pack(padx=5)
+    question_label.pack(pady=5)
 
     def copy_question():
         root.clipboard_clear()
@@ -71,135 +83,132 @@ def build_ui(root, show_main_menu_callback):
         question_frame,
         text="Copy Question",
         command=copy_question
-    ).pack(padx=5)
+    ).pack(pady=5)
 
-    # ----- QUESTION NUMBER LABEL -----
+    # ---------- META INFO ----------
     question_number_label = tk.Label(
         question_frame,
-        text="Q #: ",  # prefix text
-        bg="white",
-        font=("Arial", 16),
-        wraplength=380,
-        justify="center"
+        text="",
+        font=("Arial", 12),
+        bg="white"
     )
-    question_number_label.pack(padx=5)
+    question_number_label.pack()
 
-    # ----- CHAPTER NUMBER LABEL -----
     chapter_number_label = tk.Label(
         question_frame,
-        text="Ch #: ",  # prefix text
-        bg="white",
-        font=("Arial", 16),
-        wraplength=380,
-        justify="center"
+        text="",
+        font=("Arial", 12),
+        bg="white"
     )
-    chapter_number_label.pack(padx=5)
+    chapter_number_label.pack()
 
-    # ----- CURRENT QUESTION NUMBER LABEL -----
-    current_question_label = tk.Label(
+    progress_label = tk.Label(
         question_frame,
-        text=" ",  # prefix text
-        bg="white",
-        font=("Arial", 16),
-        wraplength=380,
-        justify="center"
+        text="",
+        font=("Arial", 12),
+        bg="white"
     )
-    current_question_label.pack(padx=5)
+    progress_label.pack(pady=5)
 
-    # ----- ANSWER BUTTONS -----
+    # ---------- ANSWER BUTTONS ----------
     buttons = {}
     for letter in ["A", "B", "C", "D"]:
         btn = tk.Button(
             root,
             text="",
-            command=lambda l=letter: handle_answer(root, l, show_main_menu_callback),
+            font=("Arial", 14),
+            width=40,
+            height=2,
             bg="white",
-            width=30,
-            height=2
+            command=lambda l=letter: handle_answer(root, l, show_main_menu_callback)
         )
         btn.pack(pady=5)
         buttons[letter] = btn
 
-    result_label = tk.Label(root, text="", bg="white", font=("Arial", 12))
+    result_label = tk.Label(
+        root,
+        text="",
+        font=("Arial", 14),
+        bg="white"
+    )
     result_label.pack(pady=10)
 
     next_button = tk.Button(
         root,
         text="Next",
-        command=lambda: next_question(root, show_main_menu_callback),
-        state="disabled"
+        font=("Arial", 14),
+        state="disabled",
+        command=lambda: next_question(root, show_main_menu_callback)
     )
     next_button.pack(pady=10)
 
     tk.Button(
         root,
         text="Back to Main Menu",
-        command=lambda: show_main_menu_callback(root),
         font=("Arial", 12),
-        width=20,
-        height=1
+        command=lambda: show_main_menu_callback(root)
     ).pack(pady=10)
 
 
 def load_question(root, show_main_menu_callback):
+    """Load the current question."""
     global current_question_number
+
     question = quiz.get_current_question()
     if not question:
         show_final_score(root, show_main_menu_callback)
         return
 
-    # Increment question counter
     current_question_number += 1
 
-    # Update QUESTION label
     question_label.config(text=question["question"])
 
-    # Update QUESTION NUMBER label only if it exists
-    if "question_number" in question and question["question_number"]:
-        question_number_label.config(text=f"Q #: {question['question_number']}")
-        question_number_label.pack()  # ensure it is visible
-    else:
-        question_number_label.pack_forget()  # hide if missing
+    # Question number
+    qn = question.get("question_number", "").strip()
+    question_number_label.config(
+        text=f"Question #: {qn}" if qn else ""
+    )
 
-    # Update QUESTION CHAPTER label only if it exists
-    if "chapter_number" in question and question["chapter_number"]:
-        chapter_number_label.config(text=f"Ch #: {question['chapter_number']}")
-        chapter_number_label.pack()  # ensure it is visible
-    else:
-        chapter_number_label.pack_forget()  # hide if missing
+    # Chapter number
+    ch = question.get("chapter_number", "").strip()
+    chapter_number_label.config(
+        text=f"Chapter: {ch}" if ch else ""
+    )
 
-    # ----- CURRENT PROGRESS (e.g., 2 / 40) -----
-    current_question_label.config(
+    progress_label.config(
         text=f"Progress: {current_question_number} / {quiz.total_questions}"
     )
-    current_question_label.pack()
 
-    # Update answer buttons
     for letter in ["A", "B", "C", "D"]:
-        text = question[f"choice_{letter.lower()}"]
-        buttons[letter].config(text=f"{letter}) {text}", state="normal", bg="white")
+        buttons[letter].config(
+            text=f"{letter}) {question[f'choice_{letter.lower()}']}",
+            state="normal",
+            bg="white"
+        )
 
     result_label.config(text="")
     next_button.config(state="disabled")
 
 
 def handle_answer(root, letter, show_main_menu_callback):
+    """Handle answer click."""
     is_correct, correct_letter = quiz.check_answer(letter)
     question = quiz.get_current_question()
-    correct_choice = question[f"choice_{correct_letter.lower()}"]
+
+    correct_text = question[f"choice_{correct_letter.lower()}"]
 
     if is_correct:
-        result_label.config(text=f"✅ {correct_choice} is correct!", fg="green")
+        result_label.config(
+            text=f"✅ Correct: {correct_text}",
+            fg="green"
+        )
     else:
         result_label.config(
-            text=f"❌ {letter} Wrong! Correct: {correct_letter}) {correct_choice}",
+            text=f"❌ Wrong. Correct answer: {correct_letter}) {correct_text}",
             fg="red"
         )
-
-        # SAVE WRONG ANSWER
         wrong_manager.add_wrong_answer(question)
 
-    # disable buttons
     for btn in buttons.values():
         btn.config(state="disabled")
 
@@ -207,6 +216,7 @@ def handle_answer(root, letter, show_main_menu_callback):
 
 
 def next_question(root, show_main_menu_callback):
+    """Move to the next question."""
     if quiz.next_question():
         load_question(root, show_main_menu_callback)
     else:
@@ -214,38 +224,40 @@ def next_question(root, show_main_menu_callback):
 
 
 def show_final_score(root, show_main_menu_callback):
-    global current_quiz_file, question_limit_global, selected_chapters_global
-
+    """Show final results screen."""
     for widget in root.winfo_children():
         widget.destroy()
 
-    score_text = f"Final Score: {quiz.score}/{quiz.total_questions}"
-    tk.Label(root, text=score_text, font=("Arial", 25), bg="white").pack(pady=40)
+    score_text = f"Final Score: {quiz.score} / {quiz.total_questions}"
+    tk.Label(
+        root,
+        text=score_text,
+        font=("Arial", 26),
+        bg="white"
+    ).pack(pady=40)
 
-    # end_quiz(os.path.basename(current_quiz_file), quiz.score, quiz.total_questions)
     end_quiz(quiz.score, quiz.total_questions)
 
-    # Restart with the SAME question limit AND chapter filter
     tk.Button(
         root,
         text="Restart Quiz",
+        font=("Arial", 18),
+        width=20,
+        height=2,
         command=lambda: start_quiz(
             root,
             os.path.basename(current_quiz_file),
             question_limit_global,
             show_main_menu_callback,
-            selected_chapters_global  # NEW: Pass the stored chapter list
-        ),
-        font=("Arial", 20),
-        width=20,
-        height=2
+            selected_chapters_global
+        )
     ).pack(pady=10)
 
     tk.Button(
         root,
         text="Back to Main Menu",
-        command=lambda: show_main_menu_callback(root),
-        font=("Arial", 20),
+        font=("Arial", 18),
         width=20,
-        height=2
+        height=2,
+        command=lambda: show_main_menu_callback(root)
     ).pack(pady=10)
