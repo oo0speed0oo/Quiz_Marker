@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update data&#10;update unit selector">
-      <change afterPath="$PROJECT_DIR$/data/JLPT practice.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/N5_adjective.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/old/wrong_answers.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/n5_adjective_te_form copy.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrong_answers.csv" beforeDir="false" />
-    </list>
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update data" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,14 +56,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762375150041</updated>
-    </task>
-    <task id="LOCAL-00004" summary="seperated main menu">
-      <option name="closed" value="true" />
-      <created>1762380648536</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1762380648536</updated>
     </task>
     <task id="LOCAL-00005" summary="add number counter">
       <option name="closed" value="true" />
@@ -456,7 +441,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768717740204</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="update data">
+      <option name="closed" value="true" />
+      <created>1768858960759</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1768858960759</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -484,8 +477,8 @@
     <MESSAGE value="update score manager" />
     <MESSAGE value="update data&#10;change test score folder location&#10;delete old files" />
     <MESSAGE value="update data&#10;change test score folder location" />
-    <MESSAGE value="update data" />
     <MESSAGE value="update data&#10;update unit selector" />
-    <option name="LAST_COMMIT_MESSAGE" value="update data&#10;update unit selector" />
+    <MESSAGE value="update data" />
+    <option name="LAST_COMMIT_MESSAGE" value="update data" />
   </component>
 </project>
