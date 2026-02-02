@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update data">
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;data/N4_Grammar_Questions.csv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/N4_Grammar_Questions.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/N4_Grammar_Questions.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/test_scores/quiz_scores.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/test_scores/quiz_scores.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/wrong_answers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/wrong_answers.csv" afterDir="false" />
     </list>
@@ -61,30 +60,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762375150041</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Update data">
-      <option name="closed" value="true" />
-      <created>1762667584638</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1762667584638</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Update data">
-      <option name="closed" value="true" />
-      <created>1762667588694</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1762667588694</updated>
-    </task>
-    <task id="LOCAL-00008" summary="add copy button">
-      <option name="closed" value="true" />
-      <created>1762780449137</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1762780449137</updated>
     </task>
     <task id="LOCAL-00009" summary="fix score">
       <option name="closed" value="true" />
@@ -454,12 +429,35 @@
       <option name="project" value="LOCAL" />
       <updated>1769118354823</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="update data">
+      <option name="closed" value="true" />
+      <created>1769555416967</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1769555416968</updated>
+    </task>
+    <task id="LOCAL-00056" summary="update data">
+      <option name="closed" value="true" />
+      <created>1769555420535</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1769555420535</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;data/N4_Grammar_Questions.csv">
+      <option name="closed" value="true" />
+      <created>1769555457508</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1769555457508</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="build quiz marker&#10;add loader&#10;add ui&#10;add logic&#10;add score&#10;add save to file" />
     <MESSAGE value="seperated main menu" />
     <MESSAGE value="add number counter" />
     <MESSAGE value="Update data" />
@@ -484,6 +482,7 @@
     <MESSAGE value="update data&#10;change test score folder location" />
     <MESSAGE value="update data&#10;update unit selector" />
     <MESSAGE value="update data" />
-    <option name="LAST_COMMIT_MESSAGE" value="update data" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;data/N4_Grammar_Questions.csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;data/N4_Grammar_Questions.csv" />
   </component>
 </project>
