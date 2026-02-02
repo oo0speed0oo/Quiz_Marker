@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;data/N4_Grammar_Questions.csv">
+    <list default="true" id="e83b7a22-9a44-4e76-8f28-2a3cc48bf898" name="Changes" comment="update quiz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test_scores/quiz_scores.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/test_scores/quiz_scores.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/wrong_answers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/wrong_answers.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,22 +58,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762375150041</updated>
-    </task>
-    <task id="LOCAL-00009" summary="fix score">
-      <option name="closed" value="true" />
-      <created>1762780948953</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1762780948953</updated>
-    </task>
-    <task id="LOCAL-00010" summary="change variable names">
-      <option name="closed" value="true" />
-      <created>1762869695847</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1762869695848</updated>
     </task>
     <task id="LOCAL-00011" summary="add wrong answer manager">
       <option name="closed" value="true" />
@@ -453,12 +435,27 @@
       <option name="project" value="LOCAL" />
       <updated>1769555457508</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="update quiz">
+      <option name="closed" value="true" />
+      <created>1770006648818</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1770006648819</updated>
+    </task>
+    <task id="LOCAL-00059" summary="update quiz">
+      <option name="closed" value="true" />
+      <created>1770006660888</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1770006660888</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="seperated main menu" />
     <MESSAGE value="add number counter" />
     <MESSAGE value="Update data" />
     <MESSAGE value="add copy button" />
@@ -483,6 +480,7 @@
     <MESSAGE value="update data&#10;update unit selector" />
     <MESSAGE value="update data" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;data/N4_Grammar_Questions.csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;data/N4_Grammar_Questions.csv" />
+    <MESSAGE value="update quiz" />
+    <option name="LAST_COMMIT_MESSAGE" value="update quiz" />
   </component>
 </project>
